@@ -8,6 +8,8 @@ interface Props {
 const Card: React.FunctionComponent<Props> = React.memo(function Card(props) {
   const { id, json } = props;
 
+  console.log({ json });
+
   return (
     <div
       className="flippable door"
