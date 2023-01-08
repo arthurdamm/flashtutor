@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Game from './Game';
 
+import './styles/Styles.css';
+
 function App() {
   return (
     <div className="App">

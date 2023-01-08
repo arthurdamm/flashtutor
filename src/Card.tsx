@@ -3,16 +3,18 @@ import React from 'react';
 interface Props {
   id: string;
   json: any;
+  flipped: boolean;
 }
 
 const Card: React.FunctionComponent<Props> = React.memo(function Card(props) {
-  const { id, json } = props;
+  const { id, json, flipped } = props;
+
 
   console.log({ json });
 
   return (
     <div
-      className="flippable door"
+      className={`flippable door${flipped ? " flip" : ""}`}
       id={id}
       //   ontouchstart="this.classNameList.toggle('hover');"
     >
@@ -27,7 +29,10 @@ const Card: React.FunctionComponent<Props> = React.memo(function Card(props) {
           <p className="card-text">{json.question}</p>
         </div>
 
-        <div className="card back">
+
+      </div>
+
+      <div className="card back">
           <div className="card settings" style={{ display: 'none' }}>
             <div className="flip-on-click">
               <div className="settings-text">flip on click</div>
@@ -45,13 +50,13 @@ const Card: React.FunctionComponent<Props> = React.memo(function Card(props) {
           </div>
           <div className="card-icon success">&#9989</div>
           <div className="card-icon fail">&#10060</div>
-          <div className="card-body card-back" style={{ display: 'none' }}>
+          <div className="card-body card-back">
             <h5 className="card-title">Answer</h5>
             <p className="card-text">{json.answer}</p>
           </div>
         </div>
         <div className="card fail"></div>
-      </div>
+        
     </div>
   );
 });
