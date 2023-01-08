@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from './Card';
+import FlashcardOuter from './FlashcardOuter';
 import { loadDeck, DECKS } from './lib/datastore.js';
 
 interface Props {}
@@ -11,11 +11,8 @@ const Game: React.FunctionComponent<Props> = React.memo(function Game(props) {
   console.log('GAME()', { deck });
   return (
     <div className="game-component">
-      <button onClick={() => setFlipped(!flipped)}>Flip: {flipped.toString()}</button>
-      <div className="deck">
-        <Card id="door1" json={deck[0]} flipped={flipped}/>
-        {/* <Card id="door2" json={deck[1]} flipped={false} /> */}
-      </div>
+      <button onClick={() => setFlipped(!flipped)}>Flipy: {flipped.toString()}</button>
+      <FlashcardOuter deck={deck} flipped={flipped} />
     </div>
   );
 });
