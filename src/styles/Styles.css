@@ -1,4 +1,7 @@
 @import './Card.css';
+@import './FlashcardFaceBack.css';
+@import './FlashcardFaceBase.css';
+@import './FlashcardFaceFront.css';
 @import './FlashcardInner.css';
 @import './FlashcardOuter.css';
 @import './Game.css';

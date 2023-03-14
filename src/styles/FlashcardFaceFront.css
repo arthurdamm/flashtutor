@@ -1,0 +1,8 @@
+.FlashcardFaceFront {
+    z-index: -1;
+    -webkit-transform: rotateY(0deg); /* Firefox 31 fix */
+    -moz-transform: rotateY(0deg); /* Firefox 31 fix */
+    -ms-transform: rotateY(0deg); /* Firefox 31 fix */
+    -o-transform: rotateY(0deg); /* Firefox 31 fix */
+    transform: rotateY(0deg); /* Firefox 31 fix */
+  }

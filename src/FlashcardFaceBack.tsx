@@ -1,17 +1,22 @@
 import React from 'react';
+import FlashcardFaceBase from './FlashcardFaceBase';
 
 interface Props {
     answer: string
+    showSettings: boolean
+    onGearClick: () => void;
 }
 
-const FlashcardBack: React.FunctionComponent<Props> = React.memo(function FlashcardBack(props) {
+const FlashcardFaceBack: React.FunctionComponent<Props> = React.memo(function FlashcardFaceBack(props) {
 
-    const {answer} = props;
+    const {answer, showSettings, onGearClick} = props; 
 
-    return (<div className="card back">
-    <div className="card settings" style={{ display: 'none' }}>
+    return (
+  <FlashcardFaceBase className="FlashcardFaceBack">
+    <div className="FlashcardSettings" style={{ display: showSettings ? 'inline' : 'none' }}>
+      <div className="settings-icon" onClick={onGearClick}></div>
       <div className="flip-on-click">
-        <div className="settings-text">flip on click</div>
+        <div className="">flip on click</div>
         <input className="toggle-flip" type="checkbox" />
       </div>
       <div className="algo-select">
@@ -26,12 +31,12 @@ const FlashcardBack: React.FunctionComponent<Props> = React.memo(function Flashc
     </div>
     <div className="card-icon success">&#9989</div>
     <div className="card-icon fail">&#10060</div>
-    <div className="card-body card-back">
+    <div className="FlashcardFaceBack__answer card-body" style={{ display: !showSettings ? 'inline' : 'none' }}>
       <h5 className="card-title">Answer</h5>
       <p className="card-text">{answer}</p>
     </div>
-  </div>);
+  </FlashcardFaceBase>);
 });
 
-export default FlashcardBack;
+export default FlashcardFaceBack;
 
